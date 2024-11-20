@@ -11,6 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class MainPageTest {
     private WebDriver driver;
@@ -40,6 +43,8 @@ public class MainPageTest {
         searchField.submit();
 
 
+        List<WebElement> elementList =  driver.findElement(By.cssSelector(":not(.b_adurl)>cite"));
+        
         WebElement searchPageField = driver.findElement(By.cssSelector("#sb_form_q"));
         assertEquals("Selenium", searchPageField.getAttribute("value"));
     }
